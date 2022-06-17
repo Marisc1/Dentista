@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "891860107447",
+    "project_id": "dentista-b943c",
+    "storage_bucket": "dentista-b943c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891860107447:android:82bdeacb5749d76cc08d32",
+        "android_client_info": {
+          "package_name": "com.dentista"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891860107447-boap6kqceoelukrmcfcntpai9h0im5l6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-g5UdOOKdg0T8meWVVyqJfpnqSR_1izk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891860107447-boap6kqceoelukrmcfcntpai9h0im5l6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
