@@ -1,13 +1,32 @@
 package com.dentista.ui.dentista
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.*
+import com.dentista.data.DentistaDao
+import com.dentista.model.Dentista
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-class DentistaViewModel : ViewModel() {
+class DentistaViewModel(application: Application) : AndroidViewModel(application) {
+    val getAllData: LiveData<List<Dentista>>
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    private val repository: DentistaRepository
+
+    init {
+        val dentistaDao = DentistaDatabase.getDatabase(application).dentistaDao()
+        repository =DentistaRepository(dentistaDao)
+        getAllData =repository.getAllData
     }
-    val text: LiveData<String> = _text
+
+    fun addDentista (dentista: Dentista){
+        viewModelScope.launch(Dispatchers.IO){ repository.addDentista(dentista)}
+    }
+
+    fun updateDentista (dentista: Dentista){
+        viewModelScope.launch(Dispatchers.IO){ repository.updateDentista(dentista)}
+    }
+
+    fun deleteDentista (dentista: Dentista){
+        viewModelScope.launch(Dispatchers.IO){ repository.deleteDentista(dentista)}
+    }
 }
